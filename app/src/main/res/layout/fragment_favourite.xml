@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/dimen_10"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.favorite.FavouriteFragment">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/emptyState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:layout_marginEnd="@dimen/dimen_10"
+        android:layout_marginStart="@dimen/dimen_10"
+        android:lineSpacingExtra="@dimen/dimen_8"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_16"
+        android:textStyle="bold"
+        android:text="@string/you_currently_have_no_favs_open_a_dev_s_profile_to_add_to_or_remove_form_your_fav_lagos_dev_list" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/favDevRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:visibility="visible"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_dev" />
+
+</FrameLayout>
