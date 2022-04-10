@@ -21,7 +21,7 @@ import javax.inject.Inject
 class DevRepositoryImpl @Inject constructor(
     private val apiDataSource: ApiDataSource,
     private val localDataSource: LocalDataSource,
-    ) : DevRepository {
+) : DevRepository {
     private val devDao = localDataSource.getDevDao()
 
 

@@ -13,13 +13,15 @@ import kotlinx.android.synthetic.main.fragment_details.*
 @AndroidEntryPoint
 class DetailsFragment : Fragment(R.layout.fragment_details) {
 
-    lateinit var updatedDev:Devs.DevEntity
+    lateinit var updatedDev: Devs.DevEntity
 
     val viewModel: DetailsViewModel by viewModels()
 
-    private val devId by lazy { arguments.let {
-        DetailsFragmentArgs.fromBundle(it!!).id
-    } }
+    private val devId by lazy {
+        arguments.let {
+            DetailsFragmentArgs.fromBundle(it!!).id
+        }
+    }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -53,7 +55,7 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
         )
 
 
-        profileImage.load(dev.avatarUrl){
+        profileImage.load(dev.avatarUrl) {
             placeholder(R.drawable.ic_default_image)
         }
 
@@ -80,7 +82,7 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
                 favImageButton.setImageResource(R.drawable.ic_fav)
             }
 
-             updatedDev = Devs.DevEntity(
+            updatedDev = Devs.DevEntity(
                 dev.id,
                 dev.devId,
                 dev.userName,

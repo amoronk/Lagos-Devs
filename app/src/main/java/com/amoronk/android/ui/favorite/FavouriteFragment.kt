@@ -1,17 +1,13 @@
 package com.amoronk.android.ui.favorite
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
+import android.util.Log
 import android.view.View
-import androidx.appcompat.widget.Toolbar
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.amoronk.android.R
-import com.amoronk.android.ui.MainActivity
 import com.amoronk.android.ui.home.adapter.FavDevAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_favourite.*
@@ -21,7 +17,7 @@ class FavouriteFragment : Fragment(R.layout.fragment_favourite) {
 
     val viewModel: FavouriteViewModel by viewModels()
 
-    private  val mAdapter by lazy { FavDevAdapter(arrayListOf()) }
+    private val mAdapter by lazy { FavDevAdapter(arrayListOf()) }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -41,12 +37,10 @@ class FavouriteFragment : Fragment(R.layout.fragment_favourite) {
 
         viewModel.favDataResult.observe(viewLifecycleOwner) {
 
-            if (it != null) {
-
+            if (it.isNotEmpty()) {
                 emptyState.visibility = View.GONE
                 favDevRecyclerView.visibility = View.VISIBLE
                 mAdapter.updateDevs(it)
-
             } else {
                 emptyState.visibility = View.VISIBLE
                 favDevRecyclerView.visibility = View.GONE

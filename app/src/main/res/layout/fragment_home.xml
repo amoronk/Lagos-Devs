@@ -12,8 +12,7 @@
         android:visibility="visible"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
+        android:layout_height="wrap_content" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/emptyState"
@@ -29,7 +28,6 @@
         android:textSize="@dimen/text_16"
         android:textStyle="bold"
         android:text="Empty data. Kindly ensure you are connected to the internet." />
-
 
 
     <androidx.recyclerview.widget.RecyclerView

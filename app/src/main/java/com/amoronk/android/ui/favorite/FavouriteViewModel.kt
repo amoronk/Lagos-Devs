@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModel
 import com.amoronk.android.data.local.model.Devs
 import com.amoronk.android.data.repository.DevRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
@@ -21,7 +20,7 @@ class FavouriteViewModel @Inject constructor(private val repository: DevReposito
     var favDataResult: LiveData<List<Devs.DevEntity>> = _favDataResult
 
 
-    fun fetchFavDevs( fav:Boolean){
+    fun fetchFavDevs(fav: Boolean) {
         mDisposable.add(
             repository.getFavDev(fav)
                 .subscribeOn(Schedulers.io())
@@ -41,7 +40,6 @@ class FavouriteViewModel @Inject constructor(private val repository: DevReposito
         super.onCleared()
         mDisposable.dispose()
     }
-
 
 
 }

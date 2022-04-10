@@ -28,15 +28,18 @@ class HomeFragment : Fragment(R.layout.fragment_home), ListAction {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        requireActivity().findViewById<View>(R.id.homeFavImageButton)
-            ?.setOnClickListener {
-                findNavController().navigate(R.id.action_home_to_fav)
-            }
-
         viewModel.fetchDevs()
 
         initView()
 
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        requireActivity().findViewById<View>(R.id.homeFavImageButton)
+            ?.setOnClickListener {
+                findNavController().navigate(R.id.action_home_to_fav)
+            }
     }
 
     private fun initView() {

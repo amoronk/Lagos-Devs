@@ -28,8 +28,6 @@
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
 
 
-
-
     </fragment>
 
     <fragment
@@ -49,7 +47,7 @@
         android:id="@+id/nav_fav"
         android:name="com.amoronk.android.ui.favorite.FavouriteFragment"
         android:label="Favourite Devs"
-        tools:layout="@layout/fragment_favourite"/>
+        tools:layout="@layout/fragment_favourite" />
 
 
 </navigation>

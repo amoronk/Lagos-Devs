@@ -39,10 +39,9 @@ class FavDevAdapter(val devs: ArrayList<Devs.DevEntity>) :
             username.text = devEntity.userName.uppercase(Locale.getDefault())
             url.text = devEntity.url
 
-            profileImageView.load(devEntity.avatarUrl){
+            profileImageView.load(devEntity.avatarUrl) {
                 placeholder(R.drawable.ic_default_image)
             }
-
 
 
         }

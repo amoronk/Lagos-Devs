@@ -19,12 +19,11 @@ class HomeViewModel @Inject constructor(private val repository: DevRepository) :
 
     private val mDisposable = CompositeDisposable()
 
-    private var _pagingDataResult:MutableLiveData<PagingData<Devs.DevEntity>> = MutableLiveData()
-    var pagingDataResult:LiveData<PagingData<Devs.DevEntity>> = _pagingDataResult
+    private var _pagingDataResult: MutableLiveData<PagingData<Devs.DevEntity>> = MutableLiveData()
+    var pagingDataResult: LiveData<PagingData<Devs.DevEntity>> = _pagingDataResult
 
 
-
-    fun fetchDevs(){
+    fun fetchDevs() {
         mDisposable.add(
             repository.getLagosDevs()
                 .cachedIn(viewModelScope)

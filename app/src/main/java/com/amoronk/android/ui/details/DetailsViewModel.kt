@@ -22,7 +22,7 @@ class DetailsViewModel @Inject constructor(private val repository: DevRepository
         repository.updateDevDetails(dev)
     }
 
-    fun fetchDevData( id:String){
+    fun fetchDevData(id: String) {
         mDisposable.add(
             repository.getDev(id)
                 .subscribeOn(Schedulers.io())
